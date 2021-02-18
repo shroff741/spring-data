@@ -20,8 +20,11 @@ pipeline {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
+        stage ('Build Docker Image') {
+            agent {
+                dockerfile true
+            }
+        }
     }
-     agent {
-        dockerfile true
-    }
+     
 }
