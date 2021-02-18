@@ -1,7 +1,4 @@
 pipeline {
-    agent {
-        dockerfile true
-    }
     tools {
         maven 'Maven_Home'
         jdk 'jdk8'
@@ -23,5 +20,8 @@ pipeline {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
+    }
+     agent {
+        dockerfile true
     }
 }
