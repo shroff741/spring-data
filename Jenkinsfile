@@ -25,7 +25,7 @@ pipeline {
                 dockerfile true
             }
             steps {
-                echo "Docker Image Created"
+                echo "Docker Image"
             }
         }
     }
