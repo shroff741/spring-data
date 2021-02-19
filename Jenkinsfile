@@ -19,7 +19,7 @@ pipeline {
         stage ('Maven Build') {
             steps {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
-                cd "C:/Users/ABC/.jenkins/workspace/FirstPipeline"
+                bat "cd "C:/Users/ABC/.jenkins/workspace/FirstPipeline""
             }
         }
         stage ('Build Docker Image') {
