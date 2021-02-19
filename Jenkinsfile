@@ -19,6 +19,7 @@ pipeline {
         stage ('Maven Build') {
             steps {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                bat "cd C:\Users\ABC\.jenkins\workspace\FirstPipeline"
             }
         }
         stage ('Build Docker Image') {
