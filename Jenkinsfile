@@ -1,4 +1,5 @@
 pipeline {
+    agent any 
     tools {
         maven 'Maven_Home'
         jdk 'jdk8'
