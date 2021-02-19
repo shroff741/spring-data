@@ -24,6 +24,9 @@ pipeline {
             agent {
                 dockerfile true
             }
+            steps {
+                echo "Docker Image Created"
+            }
         }
     }
      
