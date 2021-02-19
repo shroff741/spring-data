@@ -1,4 +1,5 @@
 pipeline {
+    agent any 
     tools {
         maven 'Maven_Home'
         jdk 'jdk8'
@@ -18,7 +19,6 @@ pipeline {
         stage ('Maven Build') {
             steps {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
-               	bat "cd C:\Users\ABC\.jenkins\workspace\FirstPipeline"
             }
         }
         stage ('Build Docker Image') {
@@ -26,7 +26,7 @@ pipeline {
                 dockerfile true
             }
             steps {
-                echo "Docker Image Created"
+                echo "Docker Image"
             }
         }
     }
