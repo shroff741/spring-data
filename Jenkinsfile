@@ -19,6 +19,7 @@ pipeline {
         stage ('Maven Build') {
             steps {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                stash includes: 'target/*.jar', name: 'targetfiles'
             }
         }
         stage ('Build Docker Image') {
