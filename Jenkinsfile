@@ -22,7 +22,7 @@ pipeline {
         stage ('Maven Build') {
             steps {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
-                bat "dir ${JAR_PATH}"
+                bat "cd ${JAR_PATH}"
             }
         }
         stage ('Build Docker Image') {
