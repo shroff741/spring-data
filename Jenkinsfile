@@ -30,6 +30,7 @@ pipeline {
                 dockerfile true
             }
             steps {
+            	bat "docker build ."
                 echo "Docker Image"
             }
         }
