@@ -22,15 +22,16 @@ pipeline {
         stage ('Maven Build') {
             steps {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
-                bat "cd ${JAR_PATH}"
             }
         }
         stage ('Build Docker Image') {
-        	steps{
-            	script {
-					dockerImage = docker.build imagename
-				}
-			}
+            agent {
+                dockerfile true
+            }
+            steps {
+            	bat "docker build ."
+                echo "Docker Image"
+            }
         }
     }
      
