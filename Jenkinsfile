@@ -26,13 +26,11 @@ pipeline {
             }
         }
         stage ('Build Docker Image') {
-            agent {
-                dockerfile true
-            }
-            steps {
-            	bat "docker build ."
-                echo "Docker Image"
-            }
+        	steps{
+            	script {
+					dockerImage = docker.build imagename
+				}
+			}
         }
     }
      
