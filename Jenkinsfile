@@ -5,7 +5,7 @@ pipeline {
         jdk 'jdk8'
     }
     environment {
-        JAR_PATH = 'C:\Users\ABC\.jenkins\workspace\FirstPipeline'
+        JAR_PATH = 'C:/Users/ABC/.jenkins/workspace/FirstPipeline'
     }
     stages {
         stage('Hello') {
