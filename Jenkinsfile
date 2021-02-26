@@ -4,9 +4,6 @@ pipeline {
         maven 'Maven_Home'
         jdk 'jdk8'
     }
-    environment {
-        JAR_PATH = 'C:/Users/ABC/.jenkins/workspace/FirstPipeline'
-    }
     stages {
         stage('Hello') {
             steps {
@@ -27,10 +24,6 @@ pipeline {
         stage ('Build Docker Image') {
             agent {
                 dockerfile true
-            }
-            steps {
-            	bat "docker build ."
-                echo "Docker Image"
             }
         }
     }
