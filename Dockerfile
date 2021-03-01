@@ -4,4 +4,4 @@ ADD target/spring-data-0.0.1-SNAPSHOT.jar /spring-data-0.0.1-SNAPSHOT.jar
 #ARG JAR_FILE=target/*.jar
 #COPY ${JAR_FILE} /app.jar
 COPY C:/Users/ABC/.jenkins/workspace/FirstPipeline/target/spring-data-0.0.1-SNAPSHOT.jar /app.jar
-ENTRYPOINT ["java","-jar","/spring-data-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/spring741"]
