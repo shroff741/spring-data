@@ -25,6 +25,9 @@ pipeline {
             agent {
                 dockerfile true
             }
+            steps {
+            	echo "Hello from docker"
+            }
         }
     }
      
