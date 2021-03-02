@@ -1,4 +1,9 @@
 pipeline {
+	environment { 
+        registry = "shroff741/spring141" 
+        registryCredential = 'DockerHub' 
+        dockerImage = '' 
+    }
     agent any 
     tools {
         maven 'Maven_Home'
@@ -21,11 +26,22 @@ pipeline {
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
-        stage ('Build Docker Image') {
-            steps {
-            	bat "docker build -t shroff741/spring131 ."
-            }
+        stage('Building our image') { 
+            steps { 
+                script { 
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+                }
+            } 
         }
+        stage('Deploy our image') { 
+            steps { 
+                script { 
+                    docker.withRegistry( '', registryCredential ) { 
+                        dockerImage.push() 
+                    } 
+                } 
+            }
+        } 
     }
      
 }
