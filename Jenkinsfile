@@ -35,7 +35,7 @@ pipeline {
         }
         stage ('Image run') {
         	steps {
-        		bat 'docker run dockerImage'
+        		bat 'docker run dockerimage'
         	}
         }
     }
