@@ -22,11 +22,8 @@ pipeline {
             }
         }
         stage ('Build Docker Image') {
-            agent {
-                dockerfile true
-            }
             steps {
-            	echo "Hello from docker"
+            	bat "docker build ."
             }
         }
     }
