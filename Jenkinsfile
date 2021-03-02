@@ -1,6 +1,6 @@
 pipeline {
 	environment { 
-        registry = "shroff741/spring141" 
+        registry = "shroff741/spring151" 
         registryCredential = 'DockerHub' 
         dockerImage = '' 
     }
