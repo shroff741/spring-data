@@ -33,15 +33,11 @@ pipeline {
                 }
             } 
         }
-        stage('Deploy our image') { 
-            steps { 
-                script { 
-                    docker.withRegistry( '', registryCredential ) { 
-                        dockerImage.push() 
-                    } 
-                } 
-            }
-        } 
+        stage ('Image run') {
+        	steps {
+        		bat 'docker run dockerImage'
+        	}
+        }
     }
      
 }
