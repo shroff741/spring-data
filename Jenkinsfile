@@ -2,7 +2,7 @@ pipeline {
 	environment { 
         registry = "shroff741/spring151" 
         registryCredential = 'DockerHub' 
-        dockerImage = '' 
+        dockerimage = '' 
     }
     agent any 
     tools {
@@ -29,7 +29,7 @@ pipeline {
         stage('Building our image') { 
             steps { 
                 script { 
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+                    dockerimage = docker.build registry + ":$BUILD_NUMBER" 
                 }
             } 
         }
