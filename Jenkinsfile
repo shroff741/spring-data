@@ -1,8 +1,8 @@
 pipeline {
 	environment { 
-        registry = "shroff741/spring151" 
+        registry = "shroff741/spring161" 
         registryCredential = 'DockerHub' 
-        dockerimage = '' 
+        dockerImage = '' 
     }
     agent any 
     tools {
@@ -29,15 +29,19 @@ pipeline {
         stage('Building our image') { 
             steps { 
                 script { 
-                    dockerimage = docker.build registry + ":$BUILD_NUMBER" 
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
                 }
             } 
         }
-        stage ('Image run') {
-        	steps {
-        		bat 'docker run dockerimage'
-        	}
-        }
+        stage('Deploy our image') { 
+            steps { 
+                script { 
+                    docker.withRegistry( '', registryCredential ) { 
+                        dockerImage.push() 
+                    } 
+                } 
+            }
+        } 
     }
      
 }
