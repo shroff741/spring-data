@@ -14,6 +14,7 @@ pipeline {
             steps {
                 
                 git branch: '${params.branch}', url: 'https://github.com/shroff741/spring-data.git'
+                echo "Checked out from test branch"
             }
         }
         stage ('Maven Build') {
