@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class HelloSelenium {
 	@Test
     public static void Test() {
-		System.setProperty("webdriver.gecko.driver", "F:/geckodriver/geckodriver.ex");
+		System.setProperty("webdriver.gecko.driver", "F:/geckodriver/geckodriver.exe");
     	System.out.println("Welcome to Testing");
         WebDriver driver = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver,10);
