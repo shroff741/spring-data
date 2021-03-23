@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="84965" started-at="2021-03-19T13:09:21Z" finished-at="2021-03-19T13:10:46Z">
+  <suite name="Suite" duration-ms="108652" started-at="2021-03-23T10:27:49Z" finished-at="2021-03-23T10:29:37Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="84965" started-at="2021-03-19T13:09:21Z" finished-at="2021-03-19T13:10:46Z">
+    <test name="Test" duration-ms="108652" started-at="2021-03-23T10:27:49Z" finished-at="2021-03-23T10:29:37Z">
       <class name="com.spring.HelloSelenium">
-        <test-method status="PASS" signature="Test()[pri:0, instance:com.spring.HelloSelenium@6b09bb57]" name="Test" duration-ms="84924" started-at="2021-03-19T18:39:21Z" finished-at="2021-03-19T18:40:46Z">
+        <test-method status="PASS" signature="Test()[pri:0, instance:com.spring.HelloSelenium@731a74c]" name="Test" duration-ms="108607" started-at="2021-03-23T15:57:49Z" finished-at="2021-03-23T15:59:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test -->
